@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Ahmed EL NAHTAWY - EdTech</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+        :root {
+            --primary-color: #00204a; /* Bleu marine université */
+            --accent-color: #fca311; /* Jaune/Doré innovation */
+            --bg-color: #f4f6f9; /* Gris très clair */
+            --text-color: #333333;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .poster-container {
+            background-color: var(--white);
+            max-width: 1200px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+
+        /* --- HEADER & SIDEBAR --- */
+        .sidebar {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .header-info h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .header-info h2 {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .contact-list {
+            list-style: none;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .contact-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-list a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .section-title-side {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .education-item, .language-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .education-item h4 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .education-item p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .education-item .date {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* --- MAIN CONTENT --- */
+        .main-content {
+            padding: 3rem;
+            background-color: var(--white);
+        }
+
+        .section-title-main {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .section-title-main::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+        }
+
+        .experience-card {
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+            border-left: 3px solid #e0e0e0;
+            position: relative;
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .experience-date {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .experience-company {
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .experience-details {
+            list-style-type: none;
+        }
+
+        .experience-details li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+        }
+
+        .experience-details li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .link-item {
+            background: var(--bg-color);
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+        }
+
+        .link-item:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .poster-container {
+                grid-template-columns: 1fr;
+            }
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="poster-container">
+        
+        <aside class="sidebar">
+            <div class="header-info">
+                <h1>Ahmed<br>EL NAHTAWY [cite: 24]</h1>
+                <h2>Chargé de TD - Parcours EdTech</h2>
+                <ul class="contact-list">
+                    <li>📍 158 boulevard Davout 75020 Paris [cite: 25]</li>
+                    <li>📞 0033 (0)6 20 87 76 16 [cite: 26]</li>
+                    <li>✉️ <a href="mailto:elnahtawyahmed@yahoo.fr">elnahtawyahmed@yahoo.fr [cite: 27]</a></li>
+                    <li>🌍 Nationalité : Française [cite: 28]</li>
+                </ul>
+                <ul class="contact-list">
+                    <li>🔗 <a href="www.linkedin.com/in/ahmed-el-nahtawy-2568181a" target="_blank">LinkedIn [cite: 30]</a></li>
+                    <li>🔗 <a href="https://dane.ac-creteil.fr/?page=contacter&id_auteur=136" target="_blank">Profil DANE [cite: 31]</a></li>
+                </ul>
+            </div>
+
+            <div class="education-section">
+                <h3 class="section-title-side">Formation [cite: 34]</h3>
+                
+                <div class="education-item">
+                    <span class="date">Septembre 2025 [cite: 35]</span>
+                    <h4>Master 2 Edtech [cite: 35]</h4>
+                    <p>Université Pierre et Marie Curie, Campus Sorbonne Jussieu [cite: 35]</p>
+                    <p><em>Mémoire : Evaluation d’un scénario techno-pédagogique dans Moodle Eléa [cite: 35]</em></p>
+                </div>
+
+                <div class="education-item">
+                    <span class="date">Juin 2023 [cite: 35]</span>
+                    <h4>DU Numérique pour l’ingénierie pédagogique [cite: 35]</h4>
+                    <p>Université Pierre et Marie Curie [cite: 35]</p>
+                    <p><em>Mise œuvre d’un scénario techno-pédagogique dans Moodle [cite: 35]</em></p>
+                </div>
+
+                <div class="education-item">
+                    <span class="date">Juin 2019 [cite: 35]</span>
+                    <h4>DU ECDF [cite: 35]</h4>
+                    <p>Sorbonne-Nouvelle [cite: 35]</p>
+                </div>
+
+                <div class="education-item">
+                    <span class="date">Juin 2018 [cite: 35]</span>
+                    <h4>Master 1 MEEF Lettres modernes [cite: 35]</h4>
+                    <p>INSPE/Sorbonne Nouvelle [cite: 35]</p>
+                </div>
+            </div>
+
+            <div class="languages-section">
+                <h3 class="section-title-side">Langues [cite: 36]</h3>
+                <div class="language-item">
+                    <p><strong>Arabe :</strong> Langue maternelle [cite: 37]</p>
+                    <p><strong>Anglais :</strong> C1 (Écrit/Oral) [cite: 37]</p>
+                    <p><strong>Allemand :</strong> B1 (Écrit/Oral) [cite: 37]</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <h2 class="section-title-main">Expériences Professionnelles [cite: 32]</h2>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <h3 class="experience-title">Chargé de TD GEA 2 « Outils numérique » [cite: 33]</h3>
+                    <span class="experience-date">Fév 2026 – en poste [cite: 33]</span>
+                </div>
+                <div class="experience-company">IUT de Sceau - Université Paris Saclay [cite: 33]</div>
+                <ul class="experience-details">
+                    <li>Initiation aux formules dans Excel (Fonctions diverses, Fonctions de recherche, Graphique). [cite: 33]</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <h3 class="experience-title">Formateur à la Drane [cite: 33]</h3>
+                    <span class="experience-date">Sept 2023 – Présent [cite: 33]</span>
+                </div>
+                <div class="experience-company">Académie de Créteil [cite: 33]</div>
+                <ul class="experience-details">
+                    <li>Ingénierie pédagogique et production de ressources : conception et scénarisation de parcours de formation hybrides sur plateforme LMS (Moodle). [cite: 33]</li>
+                    <li>Accompagnement et formation (à distance et en présentiel) des équipes pédagogiques. Adaptation aux besoins grâce à une approche CCU. [cite: 33]</li>
+                    <li>Sensibilisation et formation aux usages de l'Intelligence Artificielle en éducation et aux approches cognitives (enseignement explicite). [cite: 33]</li>
+                    <li>Administration et gestion technique de la plateforme collaborative de la délégation (Resana). [cite: 33]</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <h3 class="experience-title">Membre du GREID [cite: 33]</h3>
+                    <span class="experience-date">Sept 2023 - Présent [cite: 33]</span>
+                </div>
+                <div class="experience-company">Académie de Créteil [cite: 33]</div>
+                <ul class="experience-details">
+                    <li>Conception et évaluation de scénarios EdTech innovants appliqués aux Lettres. [cite: 33]</li>
+                    <li>Analyse de l'appropriation et des usages des outils numériques par les apprenants et les enseignants. [cite: 33]</li>
+                    <li>Veille et expérimentation d'environnements informatiques pour l'apprentissage. [cite: 33]</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <h3 class="experience-title">Ingénieur pédagogique [cite: 33]</h3>
+                    <span class="experience-date">Janv 2024 - Mai 2024 [cite: 33]</span>
+                </div>
+                <div class="experience-company">Stellia.ai, Paris [cite: 33]</div>
+                <ul class="experience-details">
+                    <li>Méthodes de scénarisation technologique, pédagogique et didactique : conception d'un scénario général et détaillé pour des ressources de 4e. [cite: 33]</li>
+                    <li>Élaboration de démarches didactiques innovantes intégrant les spécificités d'un environnement EdTech basé sur l'IA. [cite: 33]</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <h3 class="experience-title">Accompagnement pilote « Adaptiv’Langue » [cite: 33]</h3>
+                    <span class="experience-date">Mars 2023 - Juin 2023 [cite: 33]</span>
+                </div>
+                <div class="experience-company">Evidence B (Ministère de l’Education du Maroc) [cite: 33]</div>
+                <ul class="experience-details">
+                    <li>Ingénierie tutorale à distance : conception et animation de webinaires hebdomadaires pour l'accompagnement au changement. [cite: 33]</li>
+                    <li>Formation des enseignants au déploiement d'une solution EdTech d'Adaptive Learning basée sur l'IA (modélisation de l'apprenant). [cite: 33]</li>
+                </ul>
+            </div>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <h3 class="experience-title">Intervenant Ludovia [cite: 33]</h3>
+                    <span class="experience-date">Août 2022 - Présent [cite: 33]</span>
+                </div>
+                <div class="experience-company">Ax-les-Thermes, Spa, Yverdon-les-Bains [cite: 33]</div>
+                <ul class="experience-details">
+                    <li>Conception et animation d'ateliers : Escape Game pédagogique, LMS, IA en éducation. [cite: 33]</li>
+                    <li>Expertise et diffusion de savoirs autour de l'IA adaptative et de l'ingénierie sur systèmes auteurs (Moodle). [cite: 33]</li>
+                </ul>
+            </div>
+
+            <h2 class="section-title-main" style="margin-top: 3rem;">Conférences, Presse & Projets Clés [cite: 38]</h2>
+            <div class="links-grid">
+                <a href="https://www.pourleco.com/futur-tech/le-prof-de-2025-un-pilote-educatif-augmente-par-lia" target="_blank" class="link-item">
+                    Le prof de 2025 : un pilote éducatif augmenté par l’IA [cite: 39]
+                </a>
+                <a href="https://www.ludomag.com/2023/07/26/pour-une-scenarisation-e-education-efficace-avec-moodle/" target="_blank" class="link-item">
+                    Pour une scénarisation e-éducation efficace avec Moodle [cite: 39]
+                </a>
+                <a href="https://www.franceinter.fr" target="_blank" class="link-item">
+                    L'IA à la rescousse pour améliorer l'orthographe (France Inter) [cite: 39]
+                </a>
+                <a href="https://www.20minutes.fr/societe/4033056-20230418-paris-lycee-eleves-apprennent-travailler-intelligemment-ia" target="_blank" class="link-item">
+                    Dans ce lycée, les élèves travaillent "intelligemment" avec l'IA (20 Minutes) [cite: 39]
+                </a>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>
