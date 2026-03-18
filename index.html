@@ -222,6 +222,44 @@
             background: var(--primary-color);
             color: var(--white);
             border-color: var(--primary-color);
+            /* --- ANIMATIONS SECTION LIENS --- */
+
+/* 1. Création de l'animation d'apparition (de bas en haut) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2. Application de l'animation sur les boutons */
+.animated-link {
+    opacity: 0; /* Invisible au départ */
+    animation: fadeInUp 0.6s ease-out forwards;
+    /* On améliore la transition pour le survol */
+    transition: all 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 3. Décalage de l'apparition pour l'effet "cascade" */
+.animated-link:nth-child(1) { animation-delay: 0.1s; }
+.animated-link:nth-child(2) { animation-delay: 0.2s; }
+.animated-link:nth-child(3) { animation-delay: 0.3s; }
+.animated-link:nth-child(4) { animation-delay: 0.4s; }
+.animated-link:nth-child(5) { animation-delay: 0.5s; }
+.animated-link:nth-child(6) { animation-delay: 0.6s; }
+
+/* 4. Amélioration de l'effet au survol de la souris */
+.link-item:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+    transform: translateY(-5px); /* Fait monter le bouton de 5 pixels */
+    box-shadow: 0 8px 15px rgba(0, 32, 74, 0.2); /* Ajoute une ombre élégante */
+}
         }
 
         /* Responsive Design */
@@ -374,16 +412,16 @@
 
             <h2 class="section-title-main" style="margin-top: 3rem;">Conférences, Presse & Projets Clés </h2>
             <div class="links-grid">
-                <a href="https://www.nouvelobs.com/societe/20230831.OBS77555/et-si-l-ia-aidait-les-eleves-a-maitriser-l-orthographe.html" target="_blank" class="link-item">
+                <a href="https://www.nouvelobs.com/societe/20230831.OBS77555/et-si-l-ia-aidait-les-eleves-a-maitriser-l-orthographe.html" target="_blank" class="link-item animated-link">
                     Et si l’IA aidait les élèves à maîtriser l’orthographe ? 
                 </a>
-                <a href="https://www.ludomag.com/2023/07/26/pour-une-scenarisation-e-education-efficace-avec-moodle/" target="_blank" class="link-item">
+                <a href="https://www.ludomag.com/2023/07/26/pour-une-scenarisation-e-education-efficace-avec-moodle/" target="_blank" class="link-item animated-link">
                     Pour une scénarisation e-éducation efficace avec Moodle 
                 </a>
-                <a href="https://www.franceinter.fr" target="_blank" class="link-item">
+                <a href="https://www.franceinter.fr" target="_blank" class="link-item animated-link">
                     L'IA à la rescousse pour améliorer l'orthographe (France Inter) 
                 </a>
-                <a href="https://www.20minutes.fr/societe/4033056-20230418-paris-lycee-eleves-apprennent-travailler-intelligemment-ia" target="_blank" class="link-item">
+                <a href="https://www.20minutes.fr/societe/4033056-20230418-paris-lycee-eleves-apprennent-travailler-intelligemment-ia" target="_blank" class="link-item animated-link">
                     Dans ce lycée, les élèves travaillent "intelligemment" avec l'IA (20 Minutes) 
                 </a>
             </div>
